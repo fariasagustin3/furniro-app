@@ -4,7 +4,7 @@ import HeaderBackground from '../assets/home/header_background.png';
 import Category1 from '../assets/home/category1.png'
 import Category2 from '../assets/home/category2.png'
 import Category3 from '../assets/home/category3.png'
-import Product from './ui/product/Product';
+import Product from './ui/home/product/Product';
 import Footer from './ui/footer/Footer';
 
 export default function Home() {

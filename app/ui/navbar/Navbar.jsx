@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Logo from '../../../assets/navbar/logo.png';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
@@ -9,8 +10,12 @@ const Navbar = () => {
       </div>
 
       <ul className='flex flex-row items-center font-medium gap-16'>
-        <li className='cursor-pointer'>Home</li>
-        <li className='cursor-pointer'>Shop</li>
+        <Link href="/">
+          <li className='cursor-pointer'>Home</li>
+        </Link>
+        <Link href="/shop">
+          <li className='cursor-pointer'>Shop</li>
+        </Link>
         <li className='cursor-pointer'>About</li>
         <li className='cursor-pointer'>Contact</li>
       </ul>
