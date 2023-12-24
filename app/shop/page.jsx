@@ -3,6 +3,7 @@ import Navbar from '../ui/navbar/Navbar';
 import Footer from '../ui/footer/Footer';
 import Banner from '../ui/banner/Banner';
 import Product from '../ui/home/product/Product';
+import Benefits from '../ui/benefits/Benefits';
 
 const Shop = () => {
   return (
@@ -70,6 +71,8 @@ const Shop = () => {
         <span className='bg-[#F9F1E7] w-12 h-12 rounded-lg flex items-center justify-center text-sm font-normal text-black cursor-pointer'>3</span>
         <span className='bg-[#F9F1E7] w-12 h-12 rounded-lg flex items-center justify-center text-sm font-normal text-black cursor-pointer'>4</span>
       </div>
+
+      <Benefits />
 
       <Footer />
     </div>
