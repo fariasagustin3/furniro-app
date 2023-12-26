@@ -7,8 +7,8 @@ import CustomerSupport from '@/assets/benefits/customer_support.png'
 
 const Benefits = () => {
   return (
-    <div className='h-full flex flex-row items-center justify-between gap-5 px-7 py-20 bg-[#FAF3EA] mt-16'>
-      <div className='flex flex-row items-center gap-1 flex-1'>
+    <div className='h-full flex flex-row items-center justify-center gap-5 px-7 py-20 bg-[#FAF3EA] mt-16'>
+      <div className='flex flex-row items-center justify-center gap-1 flex-1'>
         <Image src={Trophy} alt="trophy" className='w-10' />
         <div>
           <p className='text-[#242424] text-xl font-semibold'>{"High Quality"}</p>
@@ -16,7 +16,7 @@ const Benefits = () => {
         </div>
       </div>
 
-      <div className='flex flex-row items-center gap-1 flex-1'>
+      <div className='flex flex-row items-center justify-center gap-1 flex-1'>
         <Image src={Guarantee} alt="trophy" className='w-10' />
         <div>
           <p className='text-[#242424] text-xl font-semibold'>{"Warranty Protection"}</p>
@@ -24,7 +24,7 @@ const Benefits = () => {
         </div>
       </div>
 
-      <div className='flex flex-row items-center gap-1 flex-1'>
+      <div className='flex flex-row items-center justify-center gap-1 flex-1'>
         <Image src={Shipping} alt="trophy" className='w-10' />
         <div>
           <p className='text-[#242424] text-xl font-semibold'>{"Free Shipping"}</p>
@@ -32,7 +32,7 @@ const Benefits = () => {
         </div>
       </div>
 
-      <div className='flex flex-row items-center gap-1 flex-1'>
+      <div className='flex flex-row items-center justify-center gap-1 flex-1'>
         <Image src={CustomerSupport} alt="trophy" className='w-10' />
         <div>
           <p className='text-[#242424] text-xl font-semibold'>{"24 / 7 Support"}</p>
