@@ -1,10 +1,13 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Footer = () => {
   return (
     <footer className='h-full flex flex-row items-start justify-between px-20 py-20'>
       <div className='flex flex-col gap-10'>
-        <h1 className='text-2xl font-bold cursor-default'>Furniro.</h1>
+        <Link href="/">
+          <h1 className='text-2xl font-bold cursor-pointer'>Furniro.</h1>
+        </Link>
         <div className='flex flex-col gap-1 text-[#9F9F9F] text-xs'>
           <p className='overflow-hidden cursor-default'>400 University Drive Suite 200 Coral Gables,</p>
           <p className='overflow-hidden cursor-default'>FL 33134 USA</p>
@@ -13,8 +16,12 @@ const Footer = () => {
 
       <ul className='flex flex-col items-start gap-10 font-semibold'>
         <li className='overflow-hidden text-[#9F9F9F] cursor-default'>Links</li>
-        <li className='overflow-hidden cursor-pointer'>Home</li>
-        <li className='overflow-hidden cursor-pointer'>Shop</li>
+        <Link href="/">
+          <li className='overflow-hidden cursor-pointer'>Home</li>
+        </Link>
+        <Link href="/shop">
+          <li className='overflow-hidden cursor-pointer'>Shop</li>
+        </Link>
         <li className='overflow-hidden cursor-pointer'>About</li>
         <li className='overflow-hidden cursor-pointer'>Contact</li>
       </ul>

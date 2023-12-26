@@ -1,0 +1,8 @@
+.customModal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 400px;
+  border-radius: 10px;
+  height: 600px;
+}
