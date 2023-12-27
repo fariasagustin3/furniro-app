@@ -38,7 +38,9 @@ const Navbar = () => {
           <li className='cursor-pointer'>Shop</li>
         </Link>
         <li className='cursor-pointer'>About</li>
-        <li className='cursor-pointer'>Contact</li>
+        <Link href="/contact">
+          <li className='cursor-pointer'>Contact</li>
+        </Link>
       </ul>
 
       <ul className='flex flex-row items-center font-medium gap-10'>
