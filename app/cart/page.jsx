@@ -5,6 +5,7 @@ import Footer from '../ui/footer/Footer';
 import Banner from '../ui/banner/Banner';
 import Image from 'next/image';
 import TestImage from '@/assets/cart_modal/test_image.png'
+import Link from 'next/link';
 
 const CartPage = () => {
   return (
@@ -73,7 +74,9 @@ const CartPage = () => {
             <span className='text-black text-xs font-medium'>Total</span>
             <span className='text-[#B88E2F] text-sm font-semibold'>Rs. 250,000.00</span>
           </div>
-          <button className='flex flex-row items-center justify-center px-5 py-3 border-[1px] border-black mt-10 text-xs font-medium'>Checkout</button>
+          <Link href="/checkout">
+            <button className='flex flex-row items-center justify-center px-5 py-3 border-[1px] border-black mt-10 text-xs font-medium self-center w-full'>Checkout</button>
+          </Link>
         </div>
       </div>
 
