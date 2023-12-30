@@ -2,10 +2,36 @@ import React from 'react';
 import Navbar from '../ui/navbar/Navbar';
 import Footer from '../ui/footer/Footer';
 import Banner from '../ui/banner/Banner';
-import Product from '../ui/home/product/Product';
+import ProductItem from '../ui/home/product/ProductItem';
 import Benefits from '../ui/benefits/Benefits';
+import Product from '../models/Product';
+import { connectMongoDB } from '../lib/dbConnection';
+import Pagination from '../ui/pagination/Pagination';
 
-const Shop = () => {
+async function getProducts(page) {
+  const ITEMS_PER_PAGE = 16;
+
+  try {
+    connectMongoDB();
+    const count = await Product.find().count();
+    const products = await Product.find()
+      .limit(ITEMS_PER_PAGE)
+      .skip(ITEMS_PER_PAGE * (page - 1));
+    if (!products) {
+      throw new Error("There is not any product in database")
+    } else {
+      return { count, products };
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+const Shop = async ({searchParams}) => {
+
+  const page = searchParams?.page || 1;
+  const { count, products } = await getProducts(page);
+
   return (
     <div className=''>
       <Navbar />
@@ -45,32 +71,20 @@ const Shop = () => {
         </div>
       </div>
 
-      <div className='h-full flex flex-wrap gap-8 justify-center overflow-hidden py-20'>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+      <div className='h-full flex flex-wrap gap-8 justify-center overflow-hidden px-40 py-20'>
+        {products?.map((product) => (
+          <ProductItem
+            key={product?._id}
+            title={product?.title}
+            price={product?.price}
+            stock={product?.stock}
+            img={product?.img}
+            id={product?._id}
+          />
+        ))}
       </div>
 
-      {/* pagination */}
-      <div className='flex flex-row items-center justify-center gap-4 py-5'>
-        <span className='bg-[#B88E2F] w-12 h-12 rounded-lg flex items-center justify-center text-sm font-normal text-white cursor-pointer'>1</span>
-        <span className='bg-[#F9F1E7] w-12 h-12 rounded-lg flex items-center justify-center text-sm font-normal text-black cursor-pointer'>2</span>
-        <span className='bg-[#F9F1E7] w-12 h-12 rounded-lg flex items-center justify-center text-sm font-normal text-black cursor-pointer'>3</span>
-        <span className='bg-[#F9F1E7] w-12 h-12 rounded-lg flex items-center justify-center text-sm font-normal text-black cursor-pointer'>4</span>
-      </div>
+      <Pagination count={count} />
 
       <Benefits />
 
