@@ -67,7 +67,7 @@ export default async function Home() {
       {/* products */}
       <div className='h-full flex flex-col px-20 py-10'>
         <h1 className='text-[#3A3A3A] text-3xl font-bold text-center py-5'>{"Our Products"}</h1>
-        <div className='h-full flex flex-wrap px-20 gap-8 justify-center overflow-hidden'>
+        <div className='h-full flex flex-wrap gap-8 justify-center overflow-hidden'>
           {products?.slice(0, 8)?.map((product) => (
             <ProductItem
               key={product._id}
