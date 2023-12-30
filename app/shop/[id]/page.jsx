@@ -81,15 +81,15 @@ const SingleProductPage = async ({params}) => {
             <div className='flex flex-col gap-4'>
               <h3 className='text-[#9F9F9F] text-sm'>Size</h3>
               <div className='flex flex-row items-center gap-3'>
-                {product.sizes.map((size) => (
-                  <button className='flex items-center justify-center w-8 h-8 text-xs font-medium py-2 px-2 rounded-lg bg-[#B88E2F] text-white'>{size}</button>
+                {product.sizes.map((size, index) => (
+                  <button key={index} className='flex items-center justify-center w-8 h-8 text-xs font-medium py-2 px-2 rounded-lg bg-[#B88E2F] text-white'>{size}</button>
                 ))}
                 
               </div>
               <h3 className='text-[#9F9F9F] text-sm'>Color</h3>
               <div className='flex flex-row items-center gap-3'>
-                {product.colors.map((color) => (
-                  <div className={`w-8 h-8 bg-[#${color}] rounded-full`} />
+                {product.colors.map((color, index) => (
+                  <div key={index} className={`w-8 h-8 bg-[#${color}] rounded-full`} />
                 ))}
               </div>
 
